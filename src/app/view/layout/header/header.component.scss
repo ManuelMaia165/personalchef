@@ -1,0 +1,57 @@
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px 5px;
+
+  img {
+    width: 180px;
+    margin: auto;
+  }
+
+  .botoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .criar-conta, .entrar {
+      font-size: 20px;
+      margin: 5px 10px;
+    }
+
+    .criar-conta {
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+    }
+
+    .entrar {
+      padding: 5px 10px;
+      border-radius: 4px;
+      background-color: #CF2B4E;
+      color: #ffffff;
+      border-color: unset;
+    }
+  }
+}
+
+@media (min-width: 370px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+
+    img {
+      width: unset;
+      height: 80px;
+      margin: 0px;
+    }
+
+    .botoes {
+      width: 225px;
+      justify-content: space-between;
+    }
+  }
+}

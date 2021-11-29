@@ -1,0 +1,13 @@
+footer {
+  background-color: #CF2B4E;
+  text-align: center;
+  color: white;
+  font-family: Playfair Display;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 10px 0;
+
+  p:nth-child(2) {
+    margin-bottom: 0;
+  }
+}
