@@ -10,64 +10,41 @@
 
   <div class="find-bar">
     <mat-form-field appearance="outline" class="bar">
+      <input type="search" matInput placeholder="O site que conecta chefs a quem busca comida requintada e artesanal" required>
       <mat-icon matSuffix>search</mat-icon>
-      <input type="search"  matInput placeholder="O site que conecta chefs a quem busca comida requintada e artesanal" required>
     </mat-form-field>
   </div>
 </div>
 
 <div class="titulo">
   <h1>Categorias</h1>
+  <hr>
 </div>
-<hr>
 
 <section class="categorias">
-  <div class="categoria">
-    <div class="cinza">
-      <img src="assets/coffee-cup%201.svg" alt=""/>
+  <div class="categoria" *ngFor="let categoria of categorias">
+    <div class="icon-box">
+      <mat-icon>{{categoria.icon}}</mat-icon>
     </div>
-    <p>Drink</p>
+    <p>{{categoria.nome}}</p>
   </div>
-  <div class="categoria">
-    <div class="cinza">
-      <img src="assets/image%201(1).png" alt=""/>
+</section>
+
+<div class="titulo">
+  <h1>Chefs</h1>
+  <hr>
+</div>
+
+<section class="chefs">
+  <div class="chef" *ngFor="let chef of chefs">
+    <img src="{{chef.foto}}" alt="">
+    <div class="description">
+      <h1>{{chef.nome}}</h1>
+      <p>{{chef.descricao_chef}}</p>
+      <div class="star-box">
+        <mat-icon *ngFor="let star of [].constructor(chef.estrelas)" class="star-count">star</mat-icon>
+        <mat-icon *ngFor="let star of [].constructor(5-chef.estrelas)">star</mat-icon>
+      </div>
     </div>
-    <p>Almoço</p>
-  </div>
-  <div class="categoria">
-    <div class="cinza">
-      <img src="assets/Vector_2.png" alt=""/>
-    </div>
-    <p>Aniversários</p>
-  </div>
-  <div class="categoria">
-    <div class="rosa">
-      <img src="assets/mesa-de-jantar%20(2)%201.png" alt=""/>
-    </div>
-    <p>Jantar</p>
-  </div>
-  <div class="categoria">
-    <div class="cinza">
-      <img src="assets/coffee-cup%201.svg" alt=""/>
-    </div>
-    <p>Churrasco</p>
-  </div>
-  <div class="categoria">
-    <div class="cinza">
-      <img src="assets/coffee-cup%201.svg" alt=""/>
-    </div>
-    <p>Comidas Tipicas</p>
-  </div>
-  <div class="categoria" >
-    <div class="cinza">
-      <img src="assets/coffee-cup%201.svg" alt=""/>
-    </div>
-    <p>Coffe Break</p>
-  </div>
-  <div class="categoria" >
-    <div class="cinza">
-      <img src="assets/coffee-cup%201.svg" alt=""/>
-    </div>
-    <p>Natal e Ano Novo</p>
   </div>
 </section>

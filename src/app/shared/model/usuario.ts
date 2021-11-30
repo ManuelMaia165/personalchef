@@ -2,7 +2,8 @@ export class Usuario {
   id: number;
   email: string;
   senha: string;
-  chef: boolean;
+  is_chef: boolean;
+  descricao_chef: string;
   nome: string;
   sexo: string;
   endereco: string;

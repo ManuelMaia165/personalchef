@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from '../../shared/model/usuario';
+import { Categoria } from '../../shared/model/categoria';
+import { UsuarioService } from '../../shared/services/usuario/usuario.service';
+import { CategoriaService } from '../../shared/services/categoria/categoria.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  categorias: Categoria[];
+  chefs: Usuario[];
+
+  constructor(private categoriaService: CategoriaService, private usuarioService: UsuarioService) { }
 
   ngOnInit(): void {
+    this.setCategorias();
+    this.setChefs();
+  }
+
+  async setCategorias() {
+    this.categorias = await this.categoriaService.getAll();
+  }
+
+  async setChefs() {
+    this.chefs = (await this.usuarioService.getAll()).filter(chef => chef.is_chef);
   }
 
 }
