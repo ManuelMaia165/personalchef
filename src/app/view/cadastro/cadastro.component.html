@@ -1,0 +1,61 @@
+<div class="content">
+  <div class="titles">
+    <h1>Registre-se</h1>
+    <h2>Informações pessoais</h2>
+  </div>
+
+  <div class="perfil-box">
+    <p>Selecione o perfil: </p>
+    <mat-radio-group [(ngModel)]="usuario.is_chef" class="perfis" aria-label="Selecione o perfil:">
+      <div class="card-perfil">
+        <mat-radio-button class="perfil" value="false">Cliente</mat-radio-button>
+      </div>
+      <div class="card-perfil">
+        <mat-radio-button class="perfil" value="true">Chef</mat-radio-button>
+      </div>
+    </mat-radio-group>
+  </div>
+
+  <div class="perfil-data">
+    <div class="perfil-data-first">
+      <label class="foto" for="foto-upload"></label>
+      <input type="file" style="display: none;" id="foto-upload">
+
+      <div class="name-inputs">
+        <input placeholder="Primeiro Nome">
+        <input placeholder="Sobrenome">
+      </div>
+    </div>
+
+    <div class="perfil-data-secund">
+
+      <div></div>
+      <input [(ngModel)]="usuario.telefone" class="input-form" placeholder="Telefone">
+
+      <mat-radio-group [(ngModel)]="usuario.sexo" class="radio-group-genero" aria-label="Gênero:">
+        <mat-radio-button class="input-form" value="M">Homem</mat-radio-button>
+        <mat-radio-button class="input-form" value="F">Mulher</mat-radio-button>
+      </mat-radio-group>
+
+      <input [(ngModel)]="usuario.nascimento" class="input-form" type="date" placeholder="DD/MM/AAAA">
+      <input [(ngModel)]="usuario.endereco" class="input-form" placeholder="Endereço">
+      <input [(ngModel)]="usuario.complemento" class="input-form" placeholder="Complemento">
+    </div>
+  </div>
+
+  <div>
+
+
+    <mat-form-field>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </div>
+</div>

@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@500&display=swap');
+
+.input-form {
+  height: 40px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding: 5px 10px;
+  outline: none;
+  border: 1px solid gray;
+  margin: 15px 0;
+  border-radius: 5px;
+  background: #EDE9E9;
+}
+
+.content {
+  width: 90%;
+  margin: 20px auto;
+
+  .titles {
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: bold;
+      line-height: 54px;
+      letter-spacing: 0em;
+      text-align: left;
+      margin-bottom: 0;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-family: 'Poppins', sans-serif;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 36px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+  }
+
+  .perfil-box {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 36px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+
+    .perfis {
+      display: flex;
+
+      .card-perfil {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 51px;
+        width: 182px;
+        border-radius: 5px;
+        background-color: #EDE9E9;
+        margin: 0 10px;
+
+        .perfil, .genero {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 650px) {
+    .perfil-box {
+      flex-direction: row;
+      justify-content: unset;
+
+      p {
+        margin-right: 40px;
+      }
+    }
+  }
+
+  .perfil-data {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .perfil-data-first {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 70px;
+
+      .foto {
+        height: 217px;
+        width: 222px;
+        border-radius: 50%;
+        background-color: #C4C4C4;
+      }
+
+      .name-inputs {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+
+        input {
+          width: 320px;
+          height: 40px;
+          font-family: 'Poppins', sans-serif;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 27px;
+          letter-spacing: 0em;
+          text-align: left;
+          padding: 5px 10px;
+          border: none;
+          outline: none;
+          border-bottom: 1px solid gray;
+          margin: 15px 0;
+        }
+      }
+    }
+
+    .perfil-data-secund {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 5px;
+    }
+
+    @media (min-width: 650px) {
+      .perfil-data-first {
+        flex-direction: row;
+        align-items: center;
+        justify-content: unset;
+
+        .name-inputs {
+          margin-top: 0;
+          margin-left: 50px;
+          flex: 1;
+
+          input {
+            width: unset;
+          }
+        }
+      }
+    }
+  }
+}

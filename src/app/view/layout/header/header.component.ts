@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  pathNotSearch: string[] = ["cadastro"];
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  showSearch(): boolean {
+    return !this.pathNotSearch.includes(window.location.pathname.replace("/",""));
   }
 
 }

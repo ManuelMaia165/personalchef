@@ -4,9 +4,12 @@ header {
   justify-content: space-between;
   margin: 10px 5px;
 
-  img {
-    width: 180px;
+  a {
     margin: auto;
+
+    img {
+      width: 180px;
+    }
   }
 
   .botoes {
@@ -43,15 +46,103 @@ header {
     justify-content: space-between;
     margin: 10px;
 
-    img {
-      width: unset;
-      height: 80px;
+    a {
       margin: 0px;
+
+      img {
+        width: unset;
+        height: 80px;
+      }
     }
 
     .botoes {
       width: 225px;
       justify-content: space-between;
+    }
+  }
+}
+
+.rectangle {
+  background-color: #CF2B4E;
+
+  .conteudo {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    min-height: 480px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .texto, img {
+      margin: 15px;
+    }
+
+    .texto h1 {
+      font-size: 54px;
+      line-height: 42px;
+      font-weight: bolder;
+      color: #FFDA2A;
+      font-family: dosis, serif;
+      text-align: center;
+    }
+
+    img {
+      width: 90%;
+    }
+  }
+
+  @media (min-width: 480px) {
+    .conteudo img {
+      width: unset;
+    }
+  }
+
+  @media (min-width: 750px) {
+    .conteudo {
+      flex-direction: row;
+    }
+  }
+
+  .find-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+
+    .seach-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background-color: #FFF;
+      height: 57px;
+      width: 553.34px;
+      margin-bottom: 55px;
+      padding: 0;
+      border-radius: 5px;
+      overflow: hidden;
+
+      svg {
+        position: absolute;
+        left: 15px;
+        fill: #000;
+      }
+
+      input {
+        padding-left: 45px;
+        padding-right: 10px;
+        border-width: 0 !important;
+        width: 100%;
+        height: 100%;
+        font-size: 15px;
+        outline: 0px solid transparent;
+      }
+    }
+  }
+
+  @media (max-width: 648px){
+    .find-bar .seach-box{
+      width: calc(100% - 105px);
     }
   }
 }

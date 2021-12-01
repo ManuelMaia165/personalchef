@@ -1,23 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'
 
+import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatButtonModule } from "@angular/material/button";
+import { MatRadioModule } from '@angular/material/radio';
 import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
 
-import { HomeComponent } from './home.component';
+import { CadastroComponent } from './cadastro.component';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    CadastroComponent
   ],
   imports: [
     CommonModule,
     HttpClientModule,
+    FormsModule,
+    MatFormFieldModule,
     MatButtonModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    MatRadioModule
   ]
 })
-export class HomeModule { }
+export class CadastroModule { }
