@@ -8,22 +8,24 @@
     <p>Selecione o perfil: </p>
     <mat-radio-group [(ngModel)]="usuario.is_chef" class="perfis" aria-label="Selecione o perfil:">
       <div class="card-perfil">
-        <mat-radio-button class="perfil" value="false">Cliente</mat-radio-button>
+        <mat-radio-button class="perfil" [value]="false">Cliente</mat-radio-button>
       </div>
       <div class="card-perfil">
-        <mat-radio-button class="perfil" value="true">Chef</mat-radio-button>
+        <mat-radio-button class="perfil" [value]="true">Chef</mat-radio-button>
       </div>
     </mat-radio-group>
   </div>
 
   <div class="perfil-data">
     <div class="perfil-data-first">
-      <label class="foto" for="foto-upload"></label>
-      <input type="file" style="display: none;" id="foto-upload">
+      <label for="foto-upload">
+        <img #fotoCircle class="foto">
+      </label>
+      <input type="file" style="display: none;" id="foto-upload" #foto (change)="uploadFoto(foto, fotoCircle)">
 
       <div class="name-inputs">
-        <input placeholder="Primeiro Nome">
-        <input placeholder="Sobrenome">
+        <input [(ngModel)]="name.first" placeholder="Primeiro Nome">
+        <input [(ngModel)]="name.last" placeholder="Sobrenome">
       </div>
     </div>
 
@@ -33,29 +35,33 @@
       <input [(ngModel)]="usuario.telefone" class="input-form" placeholder="Telefone">
 
       <mat-radio-group [(ngModel)]="usuario.sexo" class="radio-group-genero" aria-label="Gênero:">
-        <mat-radio-button class="input-form" value="M">Homem</mat-radio-button>
-        <mat-radio-button class="input-form" value="F">Mulher</mat-radio-button>
+        <div class="card-sexo">
+          <mat-radio-button value="M">Homem</mat-radio-button>
+        </div>
+        <div class="card-sexo">
+          <mat-radio-button value="F">Mulher</mat-radio-button>
+        </div>
       </mat-radio-group>
 
       <input [(ngModel)]="usuario.nascimento" class="input-form" type="date" placeholder="DD/MM/AAAA">
       <input [(ngModel)]="usuario.endereco" class="input-form" placeholder="Endereço">
       <input [(ngModel)]="usuario.complemento" class="input-form" placeholder="Complemento">
     </div>
+
+    <div class="perfil-data-third">
+      <p>Informações da Conta</p>
+
+      <div class="data-account">
+        <input [(ngModel)]="usuario.email" placeholder="Email">
+        <input [(ngModel)]="confirmEmail" placeholder="Confirmar E-mail">
+        <input [(ngModel)]="usuario.senha" type="password" placeholder="Senha">
+        <input [(ngModel)]="confirmSenha" type="password" placeholder="Confirmar Senha">
+      </div>
+    </div>
+
+    <button id="confirmar-cadastro" mat-raised-button (click)="salvarCadastro()">Confirmar</button>
   </div>
 
   <div>
-
-
-    <mat-form-field>
-      <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-
-    <mat-form-field>
-      <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-
-    <mat-form-field>
-      <mat-hint>Hint</mat-hint>
-    </mat-form-field>
   </div>
 </div>

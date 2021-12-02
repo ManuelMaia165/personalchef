@@ -4,10 +4,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'
 
 import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
 import { MatRadioModule } from '@angular/material/radio';
 import { MatIconModule } from "@angular/material/icon";
-import { MatInputModule } from "@angular/material/input";
 
 import { CadastroComponent } from './cadastro.component';
 
@@ -20,10 +20,10 @@ import { CadastroComponent } from './cadastro.component';
     HttpClientModule,
     FormsModule,
     MatFormFieldModule,
-    MatButtonModule,
-    MatIconModule,
     MatInputModule,
-    MatRadioModule
+    MatButtonModule,
+    MatRadioModule,
+    MatIconModule
   ]
 })
 export class CadastroModule { }
