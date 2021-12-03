@@ -6,7 +6,7 @@
 
   <div class="perfil-box">
     <p>Selecione o perfil: </p>
-    <mat-radio-group [(ngModel)]="usuario.is_chef" class="perfis" aria-label="Selecione o perfil:">
+    <mat-radio-group [(ngModel)]="usuario.is_chef" (change)="changePerfil($event)" class="perfis" aria-label="Selecione o perfil:">
       <div class="card-perfil">
         <mat-radio-button class="perfil" [value]="false">Cliente</mat-radio-button>
       </div>
@@ -46,6 +46,10 @@
       <input [(ngModel)]="usuario.nascimento" class="input-form" type="date" placeholder="DD/MM/AAAA">
       <input [(ngModel)]="usuario.endereco" class="input-form" placeholder="Endereço">
       <input [(ngModel)]="usuario.complemento" class="input-form" placeholder="Complemento">
+    </div>
+
+    <div *ngIf="is_chef" class="perfil-data-description">
+      <input [(ngModel)]="usuario.descricao_chef" class="input-form" placeholder="Descrição do chefe">
     </div>
 
     <div class="perfil-data-third">

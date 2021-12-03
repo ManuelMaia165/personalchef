@@ -15,7 +15,7 @@
       "id_categoria": 1,
       "nome": "Cardapio 1",
       "foto": "Foto 1",
-      "valor": 649.50,
+      "valor": 649.5,
       "contorno": "Contorno 1",
       "aperitivo": "Aperitivo 1",
       "dolce": "Dolce 1",
@@ -49,18 +49,18 @@
       "id": 5,
       "nome": "Categoria 5",
       "icon": "restaurant"
-    }
-    ,{
+    },
+    {
       "id": 6,
       "nome": "Categoria 6",
       "icon": "restaurant"
-    }
-    ,{
+    },
+    {
       "id": 7,
       "nome": "Categoria 7",
       "icon": "restaurant"
-    }
-    ,{
+    },
+    {
       "id": 8,
       "nome": "Categoria 8",
       "icon": "restaurant"
@@ -79,6 +79,7 @@
       "complemento": "Casa",
       "telefone": "83988888888",
       "nascimento": "01/01/2000",
+      "foto": "",
       "estrelas": 5
     },
     {
@@ -93,6 +94,7 @@
       "complemento": "Apartamento 71",
       "telefone": "83987665544",
       "nascimento": "05/02/2003",
+      "foto": "",
       "estrelas": null
     },
     {
@@ -107,6 +109,7 @@
       "complemento": "Casa",
       "telefone": "83988888888",
       "nascimento": "01/01/2000",
+      "foto": "",
       "estrelas": 4
     },
     {
@@ -121,6 +124,7 @@
       "complemento": "Casa",
       "telefone": "83988888888",
       "nascimento": "01/01/2000",
+      "foto": "",
       "estrelas": 3
     },
     {
@@ -135,6 +139,7 @@
       "complemento": "Casa",
       "telefone": "83988888888",
       "nascimento": "01/01/2000",
+      "foto": "",
       "estrelas": 0
     },
     {
@@ -149,6 +154,7 @@
       "complemento": "Casa",
       "telefone": "83988888888",
       "nascimento": "01/01/2000",
+      "foto": "",
       "estrelas": 2
     },
     {
@@ -163,6 +169,7 @@
       "complemento": "Casa",
       "telefone": "83988888888",
       "nascimento": "01/01/2000",
+      "foto": "",
       "estrelas": 1
     }
   ]

@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "backend": "json-server -w src/db.json",
     "test": "ng test"
   },
   "private": true,

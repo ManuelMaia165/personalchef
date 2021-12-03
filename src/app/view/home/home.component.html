@@ -23,7 +23,7 @@
     <div class="description">
       <h1>{{chef.nome}}</h1>
       <p>{{chef.descricao_chef}}</p>
-      <div class="star-box">
+      <div class="star-box" *ngIf="chef.estrelas !== null">
         <mat-icon *ngFor="let star of [].constructor(chef.estrelas)" class="star-count">star</mat-icon>
         <mat-icon *ngFor="let star of [].constructor(5-chef.estrelas)">star</mat-icon>
       </div>

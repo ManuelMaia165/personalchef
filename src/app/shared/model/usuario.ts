@@ -25,6 +25,6 @@ export class Usuario {
     this.complemento = '';
     this.telefone = '';
     this.nascimento = '';
-    this.estrelas = 0;
+    this.estrelas = null;
   }
 }
