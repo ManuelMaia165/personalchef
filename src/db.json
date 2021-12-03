@@ -27,42 +27,42 @@
   "categorias": [
     {
       "id": 1,
-      "nome": "Categoria 1",
+      "nome": "Drink",
       "icon": "restaurant"
     },
     {
       "id": 2,
-      "nome": "Categoria 2",
+      "nome": "Almoço",
       "icon": "restaurant"
     },
     {
       "id": 3,
-      "nome": "Categoria 3",
+      "nome": "Aniversários",
       "icon": "restaurant"
     },
     {
       "id": 4,
-      "nome": "Categoria 4",
+      "nome": "Jantar",
       "icon": "restaurant"
     },
     {
       "id": 5,
-      "nome": "Categoria 5",
+      "nome": "Churrasco",
       "icon": "restaurant"
     },
     {
       "id": 6,
-      "nome": "Categoria 6",
+      "nome": "Comidas tipicas",
       "icon": "restaurant"
     },
     {
       "id": 7,
-      "nome": "Categoria 7",
+      "nome": "Coffe Break",
       "icon": "restaurant"
     },
     {
       "id": 8,
-      "nome": "Categoria 8",
+      "nome": "Natal e Ano novo",
       "icon": "restaurant"
     }
   ],
