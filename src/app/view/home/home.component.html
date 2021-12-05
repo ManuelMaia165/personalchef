@@ -10,6 +10,7 @@
     </div>
     <p>{{categoria.nome}}</p>
   </div>
+  <p class="database-empty" *ngIf="categorias && categorias.length === 0">Não foi encontrado nenhuma categoria cadastrada</p>
 </section>
 
 <div class="titulo">
@@ -29,4 +30,5 @@
       </div>
     </div>
   </div>
+  <p class="database-empty" *ngIf="categorias && categorias.length === 0">Não foi encontrado nenhum chef cadastrado</p>
 </section>

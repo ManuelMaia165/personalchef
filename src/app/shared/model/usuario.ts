@@ -1,5 +1,5 @@
 export class Usuario {
-  id: number;
+  id: string;
   email: string;
   senha: string;
   is_chef: boolean;

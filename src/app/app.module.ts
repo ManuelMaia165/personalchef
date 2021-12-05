@@ -14,6 +14,8 @@ import { FooterComponent } from './view/layout/footer/footer.component';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatIconModule } from "@angular/material/icon";
 
+import { FirestoreModule } from './shared/firestore/firestore.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +27,7 @@ import { MatIconModule } from "@angular/material/icon";
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    FirestoreModule,
     MatFormFieldModule,
     MatIconModule,
     HomeModule,
