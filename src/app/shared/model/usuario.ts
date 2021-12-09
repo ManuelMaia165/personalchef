@@ -1,8 +1,8 @@
 export class Usuario {
-  id: string;
+  id: number;
   email: string;
   senha: string;
-  is_chef: boolean;
+  ischef: boolean;
   descricao_chef: string;
   foto: string;
   nome: string;
@@ -16,7 +16,7 @@ export class Usuario {
   constructor() {
     this.email = '';
     this.senha = '';
-    this.is_chef = false;
+    this.ischef = false;
     this.descricao_chef = '';
     this.foto = '';
     this.nome = '';

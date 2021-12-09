@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../shared/model/usuario';
 import { Categoria } from '../../shared/model/categoria';
-import { UsuarioService } from '../../shared/services-firestore/usuario/usuario.service';
-import { CategoriaService } from '../../shared/services-firestore/categoria/categoria.service';
+import { UsuarioService } from '../../shared/services/usuario/usuario.service';
+import { CategoriaService } from '../../shared/services/categoria/categoria.service';
 
-import { DataService } from '../../shared/services-firestore/data/data.service';
+import { DataService } from '../../shared/services/data/data.service';
 
 @Component({
   selector: 'app-home',
@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
   }
 
   async setChefs() {
-    this.chefs = (await this.usuarioService.getAll()).filter(chef => chef.is_chef);
+    this.chefs = (await this.usuarioService.getAll()).filter(chef => chef.ischef);
   }
 
 }

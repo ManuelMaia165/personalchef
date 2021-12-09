@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MatRadioChange, MatRadioGroup } from '@angular/material/radio';
+import { MatRadioChange } from '@angular/material/radio';
 import { Usuario } from '../../shared/model/usuario';
-import { UsuarioService } from '../../shared/services-firestore/usuario/usuario.service';
+import { UsuarioService } from '../../shared/services/usuario/usuario.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -14,7 +14,7 @@ export class CadastroComponent implements OnInit {
   name = { "first": "", "last": "" };
   confirmEmail = "";
   confirmSenha = "";
-  is_chef: boolean = this.usuario.is_chef;
+  is_chef: boolean = this.usuario.ischef;
 
   constructor(private usuarioService: UsuarioService) { }
 

@@ -1,5 +1,5 @@
 export class Cardapio {
-  id: string;
+  id: number;
   id_chef: number;
   id_categoria: number;
   nome: string;

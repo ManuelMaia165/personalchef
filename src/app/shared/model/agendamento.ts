@@ -1,5 +1,5 @@
 export class Agendamento {
-  id: string;
+  id: number;
   id_cardapio: number;
   id_cliente: number;
   aceito: boolean;

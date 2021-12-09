@@ -1,5 +1,5 @@
 export class Categoria {
-  id: string;
+  id: number;
   nome: string;
   icon: string;
 }

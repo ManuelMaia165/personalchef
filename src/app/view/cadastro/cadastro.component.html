@@ -6,7 +6,7 @@
 
   <div class="perfil-box">
     <p>Selecione o perfil: </p>
-    <mat-radio-group [(ngModel)]="usuario.is_chef" (change)="changePerfil($event)" class="perfis" aria-label="Selecione o perfil:">
+    <mat-radio-group [(ngModel)]="usuario.ischef" (change)="changePerfil($event)" class="perfis" aria-label="Selecione o perfil:">
       <div class="card-perfil">
         <mat-radio-button class="perfil" [value]="false">Cliente</mat-radio-button>
       </div>
