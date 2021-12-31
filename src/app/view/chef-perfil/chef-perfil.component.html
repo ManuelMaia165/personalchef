@@ -1,0 +1,92 @@
+<div class="content">
+
+  <mat-spinner *ngIf="!loaded"></mat-spinner>
+  <div class="perfil-data" *ngIf="loaded">
+
+    <div class="titulo" style="margin-bottom: 50px">
+      <h1>Perfil</h1>
+      <hr style="width: 185px;">
+    </div>
+
+    <div class="perfil-data-first">
+      <label for="foto-upload" class="label-foto-upload">
+        <img #fotoCircle class="foto" [src]="usuarioLogado.foto">
+        <p>+ UPLOAD FOTO</p>
+      </label>
+
+      <input type="file" style="display: none;" id="foto-upload" #foto (change)="uploadFoto(foto)">
+
+      <div class="inputs">
+        <input [(ngModel)]="usuarioLogado.nome" placeholder="Primeiro Nome">
+
+        <label for="description-chef">Descrição do chefe</label>
+        <textarea [(ngModel)]="usuarioLogado.descricao_chef" id="description-chef" class="input-form" placeholder="Exemplo: Especialidades"></textarea>
+      </div>
+    </div>
+
+    <div class="perfil-data-secund">
+
+      <input [(ngModel)]="usuarioLogado.estado_civil" class="input-form" placeholder="Estado Civil">
+      <input [(ngModel)]="usuarioLogado.telefone" class="input-form" placeholder="Telefone">
+
+      <mat-radio-group [(ngModel)]="usuarioLogado.sexo" class="radio-group-genero" aria-label="Gênero:">
+        <div class="card-sexo">
+          <mat-radio-button value="M">Homem</mat-radio-button>
+        </div>
+        <div class="card-sexo">
+          <mat-radio-button value="F">Mulher</mat-radio-button>
+        </div>
+      </mat-radio-group>
+
+      <input [(ngModel)]="usuarioLogado.nascimento" class="input-form" type="date" placeholder="DD/MM/AAAA">
+      <input [(ngModel)]="usuarioLogado.endereco" class="input-form" placeholder="Endereço">
+      <input [(ngModel)]="usuarioLogado.complemento" class="input-form" placeholder="Complemento">
+      <div class="radio-group-genero">
+        <input [(ngModel)]="usuarioLogado.conta_agencia" class="input-form" placeholder="Agência">
+        <input [(ngModel)]="usuarioLogado.conta_numero" class="input-form" placeholder="Conta com dígito">
+      </div>
+    </div>
+
+    <div class="titulo" style="margin-top: 110px;">
+      <h1>Inserir Cardapios</h1>
+      <hr>
+    </div>
+
+    <div class="cardapios">
+      <div class="cardapio" *ngFor="let cardapio of cardapios">
+        <img class="del-cardapio" src="../assets/trash.svg" (click)="removerCardapio(cardapio)">
+
+        <div class="perfil-data-first" style="margin-bottom: 35px">
+          <label class="label-foto-upload">
+            <img *ngIf="cardapio.foto != null" [src]="cardapio.foto" class="foto">
+            <img *ngIf="cardapio.foto == null" class="foto">
+            <p>+ UPLOAD FOTO</p>
+
+            <input type="file" style="display: none;" #foto (change)="uploadFotoCardapio(foto, cardapio)">
+          </label>
+
+          <div class="inserir-cardapio-inputs">
+            <input class="input-form" [(ngModel)]="cardapio.nome" placeholder="Nome">
+            <input class="input-form" [(ngModel)]="cardapio.valor" placeholder="Valor">
+          </div>
+        </div>
+
+        <div class="pratos-textarea">
+          <textarea class="input-form" [(ngModel)]="cardapio.contorno" placeholder="Contorno"></textarea>
+          <textarea class="input-form" [(ngModel)]="cardapio.aperitivo" placeholder="Aperitivo"></textarea>
+          <textarea class="input-form" [(ngModel)]="cardapio.dolce" placeholder="Dolce"></textarea>
+          <textarea class="input-form" [(ngModel)]="cardapio.primi_piatto" placeholder="Primi Piatto"></textarea>
+          <textarea class="input-form" [(ngModel)]="cardapio.secondo_piatto" placeholder="Secondo Piatto"></textarea>
+          <textarea class="input-form" [(ngModel)]="cardapio.antipasto" placeholder="Anti Pasto"></textarea>
+        </div>
+
+        <hr>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button id="add-cardapio" mat-raised-button (click)="novoCardapio()">Novo Cardápío</button>
+      <button id="confirmar-cadastro" mat-raised-button (click)="salvarPerfil()">Confirmar</button>
+    </div>
+  </div>
+</div>

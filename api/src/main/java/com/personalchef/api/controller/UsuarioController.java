@@ -33,4 +33,9 @@ public class UsuarioController {
   public Usuario save(@RequestBody Usuario usuario) {
     return this.usuarioService.save(usuario);
   }
+
+  @PostMapping("/login")
+  public Usuario fazerLogin(@RequestBody Login login) {
+    return this.usuarioService.fazerLogin(login);
+  }
 }

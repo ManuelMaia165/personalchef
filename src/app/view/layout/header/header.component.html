@@ -2,9 +2,13 @@
   <a href="">
     <img src="../assets/Rectangle%202(1).png" alt=""/>
   </a>
-  <div class="botoes">
-    <a href="cadastro" mat-flat-button class="criar-conta">criar conta</a>
-    <button mat-flat-button class="entrar">Entrar</button>
+  <div class="botoes" *ngIf="usuarioLogado == null">
+    <a href="cadastro" class="criar-conta">criar conta</a>
+    <button class="entrar" (click)="changePopUpShowButton()">Entrar</button>
+  </div>
+
+  <div class="botoes" style="justify-content: flex-end" *ngIf="usuarioLogado != null">
+    <button mat-raised-button class="entrar" (click)="routerPerfil()">Perfil</button>
   </div>
 </header>
 
@@ -24,6 +28,19 @@
         <path d="M15.8045 12.6101L11.2545 8.74949C12.1359 7.82579 12.6665 6.65205 12.6665 5.37369C12.6665 2.41081 9.8252 0 6.33324 0C2.84128 0 0 2.41079 0 5.37367C0 8.33655 2.84131 10.7474 6.33327 10.7474C7.83991 10.7474 9.22324 10.2971 10.3119 9.54931L14.8618 13.4099C14.9918 13.5202 15.1625 13.5756 15.3332 13.5756C15.5039 13.5756 15.6745 13.5202 15.8045 13.4099C16.0652 13.1887 16.0652 12.8312 15.8045 12.6101ZM6.33327 9.61605C3.57596 9.61605 1.33333 7.71321 1.33333 5.37367C1.33333 3.03413 3.57596 1.13128 6.33327 1.13128C9.09059 1.13128 11.3332 3.03413 11.3332 5.37367C11.3332 7.71321 9.09056 9.61605 6.33327 9.61605Z" fill="black" fill-opacity="0.5"/>
       </svg>
       <input type="search" matInput placeholder="O site que conecta chefs a quem busca comida requintada e artesanal" required>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="showPopUp" #popUpBox class="popup-box" (click)="changePopUpShow($event,popUpBox)">
+  <div class="popup">
+    <div class="intern-box">
+      <p>Login</p>
+      <div class="inputs">
+        <input [(ngModel)]="usuarioLogin.email" class="input-form" placeholder="Insira seu Email">
+        <input [(ngModel)]="usuarioLogin.senha" class="input-form" placeholder="Insira sua Senha">
+      </div>
+      <button mat-raised-button (click)="fazerLogin()">Entrar</button>
     </div>
   </div>
 </div>

@@ -12,6 +12,9 @@ export class Usuario {
   telefone: string;
   nascimento: string;
   estrelas: number;
+  estado_civil: string;
+  conta_agencia: string;
+  conta_numero: string;
 
   constructor() {
     this.email = '';

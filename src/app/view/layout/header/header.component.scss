@@ -146,3 +146,76 @@ header {
     }
   }
 }
+
+.popup-box {
+  position: fixed;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0 0 0 / .3);
+
+  .popup {
+
+    .intern-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: auto;
+      width: 300px;
+      max-width: 500px;
+      height: 400px;
+      background-color: #FFF;
+      border-radius: 10px;
+
+      p {
+        text-align: center;
+        font-size: 25px;
+        margin-bottom: 10px;
+      }
+
+      .inputs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        input {
+          width: 80%;
+        }
+      }
+
+      button {
+        width: 85%;
+        margin: 10px auto;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media (min-width: 600px){
+  .popup-box .popup {
+    width: 50%;
+  }
+}
+
+.input-form {
+  height: 40px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding: 5px 10px;
+  outline: none;
+  border: 1px solid gray;
+  margin: 15px 0;
+  border-radius: 5px;
+  background: #EDE9E9;
+}

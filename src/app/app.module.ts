@@ -12,9 +12,12 @@ import { HeaderComponent } from './view/layout/header/header.component';
 import { FooterComponent } from './view/layout/footer/footer.component';
 
 import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { MatIconModule } from "@angular/material/icon";
+import { MatButtonModule } from "@angular/material/button";
 
 import { FirestoreModule } from './shared/firestore/firestore.module';
+import { ChefPerfilModule } from './view/chef-perfil/chef-perfil.module';
 
 @NgModule({
   declarations: [
@@ -29,9 +32,12 @@ import { FirestoreModule } from './shared/firestore/firestore.module';
     FormsModule,
     FirestoreModule,
     MatFormFieldModule,
+    MatButtonModule,
     MatIconModule,
+    MatSnackBarModule,
     HomeModule,
-    CadastroModule
+    CadastroModule,
+    ChefPerfilModule
   ],
   providers: [],
   bootstrap: [AppComponent]

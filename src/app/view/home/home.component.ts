@@ -5,6 +5,7 @@ import { UsuarioService } from '../../shared/services/usuario/usuario.service';
 import { CategoriaService } from '../../shared/services/categoria/categoria.service';
 
 import { DataService } from '../../shared/services/data/data.service';
+import { LoginPublisher } from 'src/app/shared/services/login/login-publisher.service';
 
 @Component({
   selector: 'app-home',
@@ -15,13 +16,21 @@ export class HomeComponent implements OnInit {
 
   categorias: Categoria[];
   chefs: Usuario[];
+  usuarioLogado: Usuario;
 
-  constructor(private categoriaService: CategoriaService, private usuarioService: UsuarioService, private dataService: DataService) { }
+  constructor(private categoriaService: CategoriaService, private usuarioService: UsuarioService, private dataService: DataService, private loginPublisher: LoginPublisher) { }
 
   ngOnInit(): void {
     // this.dataService.init();
     this.setCategorias();
     this.setChefs();
+
+    this.loginPublisher.addSubscriber(this);
+    this.loginPublisher.verificaLogin(this);
+  }
+
+  updateSubscriber(usuarioLogado: Usuario) {
+    this.usuarioLogado = usuarioLogado;
   }
 
   async setCategorias() {

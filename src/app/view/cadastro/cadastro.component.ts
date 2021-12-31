@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatRadioChange } from '@angular/material/radio';
 import { Usuario } from '../../shared/model/usuario';
 import { UsuarioService } from '../../shared/services/usuario/usuario.service';
+import { LoginPublisher } from '../../shared/services/login/login-publisher.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -14,11 +15,18 @@ export class CadastroComponent implements OnInit {
   name = { "first": "", "last": "" };
   confirmEmail = "";
   confirmSenha = "";
+  usuarioLogado: Usuario = null;
   is_chef: boolean = this.usuario.ischef;
 
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(private usuarioService: UsuarioService, private loginPublisher: LoginPublisher) { }
 
   ngOnInit(): void {
+    this.loginPublisher.addSubscriber(this);
+    this.loginPublisher.verificaLogin(this);
+  }
+
+  updateSubscriber(usuarioLogado: Usuario) {
+    this.usuarioLogado = usuarioLogado;
   }
 
   uploadFoto(foto: HTMLInputElement, fotoCircle: HTMLImageElement) {

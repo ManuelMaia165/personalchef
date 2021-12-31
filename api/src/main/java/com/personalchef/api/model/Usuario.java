@@ -26,4 +26,7 @@ public class Usuario {
   private String telefone;
   private String nascimento;
   private Integer estrelas;
+  private String estado_civil;
+  private String conta_agencia;
+  private String conta_numero;
 }
