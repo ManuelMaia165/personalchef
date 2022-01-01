@@ -33,4 +33,9 @@ public class CardapioController {
   public Cardapio save(@RequestBody Cardapio cardapio) {
     return this.cardapioService.save(cardapio);
   }
+
+  @DeleteMapping("/cardapios/{id}")
+  public void delete(@PathVariable("id") Long id) {
+    this.cardapioService.delete(id);
+  }
 }

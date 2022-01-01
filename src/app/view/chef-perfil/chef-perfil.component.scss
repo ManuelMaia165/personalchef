@@ -238,7 +238,10 @@
         text-align: center;
       }
 
-      #confirmar-cadastro {
+      #confirmar-cadastro, #atualizar-chef {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: #CF2B4E;
       }
     }
@@ -293,18 +296,28 @@
   }
 }
 
+.cardapios .empty-cardapios {
+  font-size: 19px;
+  text-align: center;
+  margin-bottom: 45px;
+}
+
 .cardapio {
   position: relative;
 
   .del-cardapio {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: -20px;
+    right: -20px;
+    padding: 10px;
+    background-color: #CF2B4E;
+    border-radius: 50%;
+    cursor: pointer;
   }
 }
 
 .cardapio:not(.cardapio:first-child) {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .inserir-cardapio-inputs {
@@ -322,4 +335,8 @@
     resize: vertical;
     min-height: 40px;
   }
+}
+
+::ng-deep .mat-select-value{
+  color: #000 !important;
 }

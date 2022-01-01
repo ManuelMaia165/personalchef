@@ -46,6 +46,9 @@
         <input [(ngModel)]="usuarioLogado.conta_numero" class="input-form" placeholder="Conta com dígito">
       </div>
     </div>
+    <div class="buttons">
+      <button id="atualizar-chef" mat-raised-button (click)="salvarPerfil()">Atualizar Chef</button>
+    </div>
 
     <div class="titulo" style="margin-top: 110px;">
       <h1>Inserir Cardapios</h1>
@@ -53,6 +56,7 @@
     </div>
 
     <div class="cardapios">
+      <h3 class="empty-cardapios" *ngIf="cardapios !== null && cardapios.length === 0">O chefe logado não possui cardápios.</h3>
       <div class="cardapio" *ngFor="let cardapio of cardapios">
         <img class="del-cardapio" src="../assets/trash.svg" (click)="removerCardapio(cardapio)">
 
@@ -68,6 +72,12 @@
           <div class="inserir-cardapio-inputs">
             <input class="input-form" [(ngModel)]="cardapio.nome" placeholder="Nome">
             <input class="input-form" [(ngModel)]="cardapio.valor" placeholder="Valor">
+
+            <mat-select class="input-form" style="width: calc(100% - 20px);" [(ngModel)]="cardapio.id_categoria">
+              <mat-option *ngFor="let categoria of categorias" [value]="categoria.id">
+                {{categoria.nome}}
+              </mat-option>
+            </mat-select>
           </div>
         </div>
 
@@ -86,7 +96,7 @@
 
     <div class="buttons">
       <button id="add-cardapio" mat-raised-button (click)="novoCardapio()">Novo Cardápío</button>
-      <button id="confirmar-cadastro" mat-raised-button (click)="salvarPerfil()">Confirmar</button>
+      <button id="confirmar-cadastro" mat-raised-button (click)="salvarCardapios()">Atualizar Cardapios</button>
     </div>
   </div>
 </div>

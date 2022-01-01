@@ -28,7 +28,7 @@ export class LoginPublisher {
     const usuariosFilter = usuarios.filter(usuario => usuario.email === login.email && usuario.senha === login.senha);
     const logado = usuariosFilter.length > 0 ? usuariosFilter[0] : null;
     if(Object.values(logado).filter(i => i !== null).length > 0) {
-      localStorage.setItem("usuarioLogado", JSON.stringify(logado));
+      localStorage.setItem("usuarioLogado", JSON.stringify(login));
       this.usuarioLogado = logado;
     }
 
@@ -40,13 +40,18 @@ export class LoginPublisher {
     if(this.usuarioLogado === null) {
       const userStorage = localStorage.getItem("usuarioLogado");
       if(userStorage !== null) {
-        await this.fazerLogin( <Usuario> JSON.parse(userStorage) );
+        await this.fazerLogin( <Login> JSON.parse(userStorage) );
         if(!this.usuarioLogado)
           localStorage.removeItem("usuarioLogado");
       }
     }
 
     this.notifySubscriber(subscriber);
+  }
+
+  updateLogado(usuario: Usuario) {
+    this.usuarioLogado = usuario;
+    this.notifySubscribers();
   }
 
   logout(): void {

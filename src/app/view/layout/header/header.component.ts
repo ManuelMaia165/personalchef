@@ -3,6 +3,7 @@ import { Login } from 'src/app/shared/model/login';
 import { Usuario } from 'src/app/shared/model/usuario';
 import { Router } from '@angular/router';
 import { LoginPublisher } from 'src/app/shared/services/login/login-publisher.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +17,7 @@ export class HeaderComponent implements OnInit {
   usuarioLogin: Login = new Login();
   usuarioLogado: Usuario = null;
 
-  constructor(private loginPublisher: LoginPublisher, private router: Router) { }
+  constructor(private loginPublisher: LoginPublisher, private router: Router, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.loginPublisher.addSubscriber(this);
@@ -33,8 +34,16 @@ export class HeaderComponent implements OnInit {
     this.showPopUp = false;
   }
 
+  routerHome(): void {
+    this.router.navigate(['']);
+  }
+
   routerPerfil(): void {
-    this.router.navigate(['/chef-perfil']);
+    this.router.navigate(['chef-perfil']);
+  }
+
+  routerCadastro(): void {
+    this.router.navigate(['cadastro']);
   }
 
   showSearch(): boolean {
@@ -51,7 +60,14 @@ export class HeaderComponent implements OnInit {
   }
 
   fazerLogin() {
-    this.loginPublisher.fazerLogin(this.usuarioLogin);
+    if(this.usuarioLogin.email && this.usuarioLogin.senha)
+      this.loginPublisher.fazerLogin(this.usuarioLogin);
+    else
+      this.snackBar.open("Preencha todos os campos obrigatórios.", "Fechar");
   }
 
+  logout() {
+    localStorage.removeItem("usuarioLogado");
+    window.location.reload();
+  }
 }

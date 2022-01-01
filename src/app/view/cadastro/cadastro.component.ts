@@ -3,6 +3,7 @@ import { MatRadioChange } from '@angular/material/radio';
 import { Usuario } from '../../shared/model/usuario';
 import { UsuarioService } from '../../shared/services/usuario/usuario.service';
 import { LoginPublisher } from '../../shared/services/login/login-publisher.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-cadastro',
@@ -18,7 +19,7 @@ export class CadastroComponent implements OnInit {
   usuarioLogado: Usuario = null;
   is_chef: boolean = this.usuario.ischef;
 
-  constructor(private usuarioService: UsuarioService, private loginPublisher: LoginPublisher) { }
+  constructor(private usuarioService: UsuarioService, private loginPublisher: LoginPublisher, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.loginPublisher.addSubscriber(this);
@@ -44,7 +45,7 @@ export class CadastroComponent implements OnInit {
         fotoCircle.src = this.usuario.foto;
       }
     } catch (error) {
-      console.warn("File upload failed.");
+      this.snackBar.open("Erro ao fazer upload de arquivo.","Fechar");
       console.error(error);
     }
   }
@@ -70,14 +71,14 @@ export class CadastroComponent implements OnInit {
           this.usuario.descricao_chef = null;
 
         this.usuarioService.save(this.usuario).then(user => {
-          window.alert("Usuário cadastrado com sucesso!");
+          this.snackBar.open("Usuário cadastrado com sucesso!", "Fechar");
           window.location.reload();
         });
 
       } else
-        window.alert("Preencha todos os campos antes de concluir");
+        this.snackBar.open("Preencha todos os campos antes de concluir", "Fechar");
     } else
-      window.alert("Confirmação de emails ou senhas não conferem.");
+      this.snackBar.open("Confirmação de emails ou senhas não conferem.", "Fechar");
   }
 
 }

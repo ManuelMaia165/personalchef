@@ -29,7 +29,7 @@ export class UsuarioService {
   }
 
   async update(usuario: Usuario): Promise<Usuario> {
-    return this.httpClient.put<Usuario>(`${this.URL_USUARIOS}/${usuario.id}`, usuario).pipe(catchError(erro => {
+    return this.httpClient.put<Usuario>(this.URL_USUARIOS, usuario).pipe(catchError(erro => {
       console.error(erro);
       return of(undefined);
     })).pipe(first()).toPromise();

@@ -29,7 +29,7 @@ export class CategoriaService {
   }
 
   async update(categoria: Categoria): Promise<Categoria> {
-    return this.httpClient.put<Categoria>(`${this.URL_CATEGORIAS}/${categoria.id}`, categoria).pipe(catchError(erro => {
+    return this.httpClient.put<Categoria>(this.URL_CATEGORIAS, categoria).pipe(catchError(erro => {
       console.error(erro);
       return of(undefined);
     })).pipe(first()).toPromise();

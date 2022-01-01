@@ -29,7 +29,7 @@ export class AgendamentoService {
   }
 
   async update(agendamento: Agendamento): Promise<Agendamento> {
-    return this.httpClient.put<Agendamento>(`${this.URL_AGENDAMENTOS}/${agendamento.id}`, agendamento).pipe(catchError(erro => {
+    return this.httpClient.put<Agendamento>(this.URL_AGENDAMENTOS, agendamento).pipe(catchError(erro => {
       console.error(erro);
       return of(undefined);
     })).pipe(first()).toPromise();

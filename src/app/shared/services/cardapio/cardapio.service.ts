@@ -29,7 +29,7 @@ export class CardapioService {
   }
 
   async update(cardapio: Cardapio): Promise<Cardapio> {
-    return this.httpClient.put<Cardapio>(`${this.URL_CARDAPIOS}/${cardapio.id}`, cardapio).pipe(catchError(erro => {
+    return this.httpClient.put<Cardapio>(this.URL_CARDAPIOS, cardapio).pipe(catchError(erro => {
       console.error(erro);
       return of(undefined);
     })).pipe(first()).toPromise();
@@ -37,6 +37,13 @@ export class CardapioService {
 
   async save(cardapio: Cardapio): Promise<Cardapio> {
     return this.httpClient.post<Cardapio>(this.URL_CARDAPIOS, cardapio).pipe(catchError(erro => {
+      console.error(erro);
+      return of(undefined);
+    })).pipe(first()).toPromise();
+  }
+
+  async delete(id: number): Promise<void> {
+    return this.httpClient.delete<any>(`${this.URL_CARDAPIOS}/${id}`).pipe(catchError(erro => {
       console.error(erro);
       return of(undefined);
     })).pipe(first()).toPromise();

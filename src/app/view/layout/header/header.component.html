@@ -1,14 +1,15 @@
 <header>
-  <a href="">
+  <a (click)="routerHome()">
     <img src="../assets/Rectangle%202(1).png" alt=""/>
   </a>
   <div class="botoes" *ngIf="usuarioLogado == null">
-    <a href="cadastro" class="criar-conta">criar conta</a>
+    <a (click)="routerCadastro()" class="criar-conta">criar conta</a>
     <button class="entrar" (click)="changePopUpShowButton()">Entrar</button>
   </div>
 
   <div class="botoes" style="justify-content: flex-end" *ngIf="usuarioLogado != null">
-    <button mat-raised-button class="entrar" (click)="routerPerfil()">Perfil</button>
+    <a (click)="logout()" class="criar-conta">logout</a>
+    <button mat-raised-button class="entrar"(click)="routerPerfil()">Perfil</button>
   </div>
 </header>
 
@@ -38,7 +39,7 @@
       <p>Login</p>
       <div class="inputs">
         <input [(ngModel)]="usuarioLogin.email" class="input-form" placeholder="Insira seu Email">
-        <input [(ngModel)]="usuarioLogin.senha" class="input-form" placeholder="Insira sua Senha">
+        <input type="password" [(ngModel)]="usuarioLogin.senha" class="input-form" placeholder="Insira sua Senha">
       </div>
       <button mat-raised-button (click)="fazerLogin()">Entrar</button>
     </div>

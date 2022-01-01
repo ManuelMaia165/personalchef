@@ -10,6 +10,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatIconModule } from "@angular/material/icon";
 
 import { ChefPerfilComponent } from './chef-perfil.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { ChefPerfilComponent } from './chef-perfil.component';
     MatInputModule,
     MatButtonModule,
     MatRadioModule,
-    MatIconModule
+    MatIconModule,
+    MatSnackBarModule,
+    MatSelectModule
   ]
 })
 export class ChefPerfilModule { }
