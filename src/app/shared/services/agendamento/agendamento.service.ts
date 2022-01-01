@@ -9,7 +9,7 @@ import { catchError, first } from 'rxjs/operators';
 })
 export class AgendamentoService {
 
-  URL_AGENDAMENTOS = 'http://localhost:3000/agendamentos';
+  URL_AGENDAMENTOS = 'https://personal-cheff.herokuapp.com/agendamentos';
 
   constructor(private httpClient: HttpClient) {
   }

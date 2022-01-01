@@ -9,7 +9,7 @@ import { catchError, first } from 'rxjs/operators';
 })
 export class CardapioService {
 
-  URL_CARDAPIOS = 'http://localhost:3000/cardapios';
+  URL_CARDAPIOS = 'https://personal-cheff.herokuapp.com/cardapios';
 
   constructor(private httpClient: HttpClient) {
   }

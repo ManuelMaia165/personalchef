@@ -9,7 +9,7 @@ import { catchError, first } from 'rxjs/operators';
 })
 export class CategoriaService {
 
-  URL_CATEGORIAS = 'http://localhost:3000/categorias';
+  URL_CATEGORIAS = 'https://personal-cheff.herokuapp.com/categorias';
 
   constructor(private httpClient: HttpClient) {
   }

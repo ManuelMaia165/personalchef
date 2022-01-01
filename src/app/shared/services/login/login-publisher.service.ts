@@ -13,7 +13,7 @@ export class LoginPublisher {
   private usuarioLogado: Usuario = null;
   private subscribers: any[] = [];
 
-  baseUrl = "http://localhost:3000/usuarios";
+  baseUrl = "https://personal-cheff.herokuapp.com/usuarios";
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
