@@ -9,7 +9,7 @@
 
   <div class="botoes" style="justify-content: flex-end" *ngIf="usuarioLogado != null">
     <a (click)="logout()" class="criar-conta">logout</a>
-    <button mat-raised-button class="entrar"(click)="routerPerfil()">Perfil</button>
+    <button mat-raised-button *ngIf="usuarioLogado.ischef" class="entrar"(click)="routerPerfil()">Perfil</button>
   </div>
 </header>
 
